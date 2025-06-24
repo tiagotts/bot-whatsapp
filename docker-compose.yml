@@ -4,7 +4,8 @@ services:
     image: devlikeapro/waha:latest
     container_name: wpp_bot_waha
     restart: always
-
+    volumes:
+      - ./.sessions:/app/.sessions
     ports:
       - '3000:3000'
 
@@ -18,3 +19,4 @@ services:
       - '5678:5678'
     volumes:
         - './app.py:/app/app.py'
+        - ./chroma_data:/app/chroma_data
